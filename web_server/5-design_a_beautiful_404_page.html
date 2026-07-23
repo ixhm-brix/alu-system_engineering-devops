@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>404 - Ceci n'est pas une page</title>
+<style>
+  :root {
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 50% 20%, #1e2a4a 0%, #0b0f1a 60%, #05070c 100%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #e8ecf5;
+    text-align: center;
+    overflow: hidden;
+  }
+  .stage {
+    position: relative;
+    padding: 3rem 2.5rem;
+  }
+  .code {
+    font-size: clamp(6rem, 18vw, 11rem);
+    font-weight: 800;
+    line-height: 1;
+    margin: 0;
+    letter-spacing: -0.04em;
+    background: linear-gradient(135deg, #7dd3fc, #a78bfa 50%, #f472b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 40px rgba(124, 179, 255, 0.25));
+  }
+  .frame {
+    position: relative;
+    width: 120px;
+    height: 90px;
+    margin: -0.5rem auto 1.5rem;
+    border: 3px solid rgba(232, 236, 245, 0.35);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+  .frame::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border: 1px dashed rgba(232, 236, 245, 0.25);
+    border-radius: 2px;
+  }
+  .frame::after {
+    content: "?";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    color: rgba(232, 236, 245, 0.5);
+  }
+  h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+  }
+  p {
+    margin: 0 auto;
+    max-width: 32ch;
+    color: rgba(232, 236, 245, 0.65);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  a {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.65rem 1.4rem;
+    border-radius: 999px;
+    background: rgba(232, 236, 245, 0.08);
+    border: 1px solid rgba(232, 236, 245, 0.2);
+    color: #e8ecf5;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  a:hover {
+    background: rgba(232, 236, 245, 0.16);
+    transform: translateY(-1px);
+  }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <p class="code">404</p>
+    <div class="frame"></div>
+    <h1>Ceci n'est pas une page</h1>
+    <p>This is not a page &mdash; just like Magritte's pipe was not a pipe. The URL you followed doesn't lead anywhere real.</p>
+    <a href="/">Back to safety</a>
+  </div>
+</body>
+</html>
