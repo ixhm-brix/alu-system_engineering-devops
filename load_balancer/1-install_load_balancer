@@ -35,7 +35,7 @@ frontend http_front
 backend http_back
 	balance roundrobin
 	server 7131-web-01 54.82.205.51:80 check
-	server 7131-web-02 3.83.216.201:80 check
+	server 7131-web-02 18.234.101.46:80 check
 EOF
 
 service haproxy restart
