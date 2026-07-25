@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Configure nginx to run as the nginx user and listen on port 8080 of all IPs
+useradd nginx 2>/dev/null
+sed -i 's/listen 80 default_server;/listen 8080 default_server;/' /etc/nginx/sites-enabled/default
+sed -i 's/listen \[::\]:80 default_server ipv6only=on;/listen [::]:8080 default_server ipv6only=on;/' /etc/nginx/sites-enabled/default
+sed -i 's#pid /run/nginx.pid;#pid /tmp/nginx.pid;#' /etc/nginx/nginx.conf
+chown -R nginx:nginx /var/log/nginx /var/lib/nginx
+pkill nginx 2>/dev/null
+sleep 1
+sudo -u nginx /usr/sbin/nginx
